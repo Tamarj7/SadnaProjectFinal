@@ -1,0 +1,20 @@
+﻿.about-page {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px; /* Add rounded corners for style */
+    max-width: 800px; /* Set a maximum width to control content width */
+    margin: 0 auto; /* Center the content horizontally */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    color: #333
+}
+
+    .about-page h1 {
+        font-size: 3rem;
+        letter-spacing: 0.9px;
+        background: #333;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: fit-content;
+        margin: 0 auto; /* Center the heading horizontally within the container */
+    }

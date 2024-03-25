@@ -1,0 +1,63 @@
+﻿/* EditUserModal.css */
+.edit-user-contentt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border: 20px solid #000000;
+}
+
+.edit-user {
+    text-align: left;
+}
+
+    .edit-user h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: var(--font-roboto);
+    }
+
+.edit-user-field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+    .edit-user-field label {
+        margin-right: 10px; 
+    }
+
+    .edit-user-field select {
+        width: 100%; 
+    }
+label {
+    font-weight: bold;
+    font-family: var(--font-raleway);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-user-buttons {
+    text-align: center;
+}
+
+    .edit-user-buttons button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+        .edit-user-buttons button:hover {
+            background-color: #0056b3;
+        }

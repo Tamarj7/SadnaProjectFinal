@@ -1,0 +1,39 @@
+﻿/* lowerBar.css */
+
+.lower-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.left-content {
+    flex: 1;
+    text-align: left;
+}
+
+.center-content {
+    flex: 1;
+    text-align: center;
+}
+
+.right-content {
+    flex: 1;
+    text-align: right;
+}
+
+/* Style for the message containing "winner" */
+.message {
+    font-size: 14px;
+}
+
+    .message.winner {
+        background-color: green;
+        color: white;
+    }
+
+.score {
+    font-size: 14px;
+}

@@ -1,0 +1,196 @@
+﻿.registration-form {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+    .registration-form h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: var(--font-roboto);
+    }
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-family: var(--font-raleway);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    .login-button:hover {
+        background-color: #0056b3;
+    }
+
+p {
+    margin-top: 15px;
+    font-family: var(--font-raleway);
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.registration-form {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+    .registration-form h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: var(--font-roboto);
+    }
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative; /* Add relative positioning */
+}
+
+label {
+    font-weight: bold;
+    font-family: var(--font-raleway);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.valid-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: green;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    .login-button:hover {
+        background-color: #0056b3;
+    }
+
+.password-mismatch-error {
+    color: red;
+}
+
+p {
+    margin-top: 15px;
+    font-family: var(--font-raleway);
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.response-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1;
+    display: flex; /* Center content horizontally and vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+    .response-modal.show {
+        display: block; /* Visible when the "show" class is present */
+    }
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+    .modal-content .success-message {
+        color: green;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: var(--font-roboto);
+    }
+
+    .modal-content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .modal-content li {
+        color: red;
+    }
+
+    .modal-content button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }

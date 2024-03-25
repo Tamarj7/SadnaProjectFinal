@@ -1,0 +1,55 @@
+﻿:root {
+    --square-size: 20px;
+    --max-width: calc(var(--grid-size) * var(--square-size));
+}
+
+/* Game board container */
+.game-container .board {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px; /* Add spacing between squares both horizontally and vertically */
+    border: 1px solid #ccc;
+    padding: 5px;
+    max-width: var(--max-width); /* Use the calculated max-width variable */
+    margin: 0 auto;
+}
+
+/* Square styles */
+.game-container .square {
+    width: var(--square-size);
+    height: var(--square-size);
+    background-color: #848582;
+    margin-bottom: 5px; /* Add margin to the bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Revealed square styles */
+.square.revealed {
+    background-color: #e6e6e6;
+    color: #000; /* Change the text color */
+    border: 1px solid #888; /* Add a border */
+    /* Add any other styles you want for revealed squares */
+}
+
+
+/* Flagged square styles */
+.square.flagged::before {
+    content: "🚩"; /* Display a flag emoji before the square */
+    font-size: 13px; /* Adjust the font size as needed */
+}
+
+/* Mined square styles */
+.square.mine::before {
+    content: "💣"; /* Display a bomb emoji before the square */
+    font-size: 13px; /* Adjust the font size as needed */
+}
+
+/* Revealed number styles */
+.revealed-number {
+    font-weight: bold;
+}
