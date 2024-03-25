@@ -29,7 +29,6 @@ namespace SadnaProject.Controllers
         private readonly SignInManager<UserModel> _signInManager;   /*sign in manager*/
         private readonly RoleManager<IdentityRole> _roleManager; // Add RoleManager
         private readonly JwtUtils _jwtUtils;    /*managing acces tokes*/
-        private readonly ILogger<UsersDBController> _logger;
 
         // Constructor injection to provide instances of MyDbContext, UserManager, SignInManager, JwtUtils, ILogger, and RoleManager
         public UsersDBController(
@@ -37,8 +36,7 @@ namespace SadnaProject.Controllers
             UserManager<UserModel> userManager,
             SignInManager<UserModel> signInManager,
             JwtUtils jwtUtils,
-            RoleManager<IdentityRole> roleManager,
-            ILogger<UsersDBController> logger) // Inject ILogger
+            RoleManager<IdentityRole> roleManager) 
 
         {
             _dbContext = dbContext;
@@ -193,7 +191,7 @@ namespace SadnaProject.Controllers
                     LastName = user.LastName,
                     Email = user.Email,
                     Phone = user.Phone,
-                    Role = roles.FirstOrDefault() 
+                    Role = roles.First() 
                 };
 
                 usersWithRoles.Add(userWithRole);
@@ -363,7 +361,7 @@ namespace SadnaProject.Controllers
                 var userRole = await _userManager.GetRolesAsync(user);
 
                 // Generate a JWT token
-                var jwtToken = _jwtUtils.GenerateJwtToken(user.Id, user.UserName, userRole.FirstOrDefault());
+                var jwtToken = _jwtUtils.GenerateJwtToken(user.Id, user.UserName, userRole.First());
 
                 return Ok(new { token = jwtToken , role = userRole.FirstOrDefault()});
             }

@@ -5,12 +5,9 @@ using SadnaProject.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using SadnaProject.Controllers;
+using Microsoft.AspNetCore.SpaServices;
+
 
 
 
@@ -119,17 +116,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReactApp", builder =>
-    {
-        builder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-    });
-});
+
+
 
 var app = builder.Build();
+
 
 app.UseCors(options =>
         options.AllowAnyOrigin()
@@ -137,6 +128,14 @@ app.UseCors(options =>
                 .AllowAnyHeader()
 
 );
+
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "ClientApp";
+
+    spa.UseProxyToSpaDevelopmentServer("http://localhost:44471"); 
+
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

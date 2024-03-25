@@ -14,7 +14,7 @@ const App = () => {
 
      // UseEffect to authenticate the user and set the user's role, this will be used to set the sidebar options
     useEffect(() => {
-        fetch('/usersDB/authenticate', {
+        fetch('/authenticate', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
