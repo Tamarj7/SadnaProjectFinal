@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Proxy;
+using Microsoft.AspNetCore.SpaServices;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -50,6 +48,13 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
     endpoints.MapFallbackToFile("index.html");
+});
+
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "ClientApp";
+    // Make sure this matches your SPA's development server port
+    spa.UseProxyToSpaDevelopmentServer("http://localhost:44471");
 });
 
 app.Run();

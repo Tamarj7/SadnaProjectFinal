@@ -170,7 +170,6 @@ app.UseSpa(spa =>
     spa.Options.SourcePath = "ClientApp";
 
     spa.UseProxyToSpaDevelopmentServer("http://localhost:44471");
-
 });
 
 app.Run();
