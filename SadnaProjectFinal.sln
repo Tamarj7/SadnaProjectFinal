@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{A2A87431-8E42-4744-A3C7-676130862150}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4184F71F-EAF5-4682-8933-934D6F3160C9} = {4184F71F-EAF5-4682-8933-934D6F3160C9}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedCode", "SharedCode\SharedCode.csproj", "{F06D55AD-9D5A-4D47-AC00-8F29081FE149}"
 EndProject

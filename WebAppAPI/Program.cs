@@ -117,25 +117,21 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
 
-app.UseCors(options =>
-        options.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-);
 
-app.UseSpa(spa =>
-{
-    spa.Options.SourcePath = "ClientApp";
 
-    spa.UseProxyToSpaDevelopmentServer("http://localhost:44471"); 
-
-});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -161,9 +157,20 @@ app.MapControllerRoute(
     pattern: "{controller}/{action=Index}/{id?}");
 
 
+app.UseStaticFiles();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
+    endpoints.MapFallbackToFile("index.html");
+});
+
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "ClientApp";
+
+    spa.UseProxyToSpaDevelopmentServer("http://localhost:44471");
+
 });
 
 app.Run();
